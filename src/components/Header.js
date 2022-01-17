@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import Loading from '../pages/Login';
+import Loading from '../pages/Loading';
 import { getUser } from '../services/userAPI';
 import './Header.css';
 
@@ -9,7 +9,7 @@ export default class Index extends Component {
 
     this.state = {
       user: '',
-      // isLoading: true,
+      isLoading: true,
     };
   }
 
@@ -21,12 +21,12 @@ export default class Index extends Component {
     const userName = await getUser();
     this.setState({
       user: userName.name,
-      // isLoading: false,
+      isLoading: false,
     });
   };
 
   render() {
-    const { user } = this.state;
+    const { user, isLoading } = this.state;
 
     return (
       <header data-testid="header-component" className="header">
@@ -34,7 +34,8 @@ export default class Index extends Component {
           <h1>TrybeTunes</h1>
         </div>
         <div className="user">
-          <p data-testid="header-user-name">{user}</p>
+          {isLoading ? <Loading />
+            : <p data-testid="header-user-name">{user}</p>}
         </div>
       </header>
     );
