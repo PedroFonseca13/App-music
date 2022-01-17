@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import Loading from '../pages/Login';
+// import Loading from '../pages/Login';
 import { getUser } from '../services/userAPI';
+import './Header.css';
 
 export default class Index extends Component {
   constructor() {
@@ -8,7 +9,7 @@ export default class Index extends Component {
 
     this.state = {
       user: '',
-      isLoading: true,
+      // isLoading: true,
     };
   }
 
@@ -20,19 +21,21 @@ export default class Index extends Component {
     const userName = await getUser();
     this.setState({
       user: userName.name,
-      isLoading: false,
+      // isLoading: false,
     });
-  }
+  };
 
   render() {
-    const { isLoading, user } = this.state;
+    const { user } = this.state;
 
-    // if (isLoading) {
-    //   return <Loading />;
-    // }
     return (
-      <header data-testid="header-component">
-        <p data-testid="header-user-name">{user}</p>
+      <header data-testid="header-component" className="header">
+        <div className="logo">
+          <h1>TrybeTunes</h1>
+        </div>
+        <div className="user">
+          <p data-testid="header-user-name">{user}</p>
+        </div>
       </header>
     );
   }

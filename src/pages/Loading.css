@@ -1,0 +1,25 @@
+/* Codigo inspirado em um tutorial do youtube https://www.youtube.com/watch?v=SB9PQrOJVz4 */
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 100vh;
+  /* transform: scale(4); */
+}
+
+.c-loader {
+  animation: is-rotating 1s infinite;
+  border: 6px solid #e5e5e5;
+  border-radius: 50%;
+  border-top-color: #51d4db;
+  height: 50px;
+  width: 50px;
+}
+
+@keyframes is-rotating {
+  to {
+    transform: rotate(1turn)
+  }
+}
