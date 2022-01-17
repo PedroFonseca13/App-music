@@ -50,11 +50,11 @@ export default class Login extends Component {
             type="button"
             disabled={ inputName.length < MIN_LENGTH_INPUT_FORM }
             onClick={ this.validateLogin }
-            testid="login-submit-button"
+            data-testid="login-submit-button"
           >
             Entrar
           </button>
-          { isRedirect && <Redirect to="/Search" /> }
+          { isRedirect && <Redirect to="/search" /> }
         </form>
       </main>
     );
