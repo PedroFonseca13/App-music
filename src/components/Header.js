@@ -31,23 +31,32 @@ export default class Index extends Component {
 
     return (
       <>
-        <header data-testid="header-component" className="header">
-          <div className="logo">
-            <h1>TrybeTunes</h1>
-          </div>
-          <div className="user">
-            {isLoading ? (
-              <Loading />
-            ) : (
-              <p data-testid="header-user-name">{user}</p>
-            )}
-          </div>
-        </header>
-        <nav>
-          <Link to="/search" data-testid="link-to-search">Search</Link>
-          <Link to="/favorites" data-testid="link-to-favorites">Favorites</Link>
-          <Link to="/profile" data-testid="link-to-profile">Profile</Link>
-        </nav>
+        {' '}
+        {isLoading ? (
+          <Loading />
+        ) : (
+          <>
+            <header data-testid="header-component" className="header">
+              <div className="logo">
+                <h1>TrybeTunes</h1>
+              </div>
+              <div className="user">
+                <p data-testid="header-user-name">{user}</p>
+              </div>
+            </header>
+            <nav>
+              <Link to="/search" data-testid="link-to-search">
+                Search
+              </Link>
+              <Link to="/favorites" data-testid="link-to-favorites">
+                Favorites
+              </Link>
+              <Link to="/profile" data-testid="link-to-profile">
+                Profile
+              </Link>
+            </nav>
+          </>
+        )}
       </>
     );
   }
