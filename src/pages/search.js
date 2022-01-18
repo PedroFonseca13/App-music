@@ -4,6 +4,7 @@ import Header from '../components/Header';
 import searchAlbumsAPI from '../services/searchAlbumsAPI';
 import { MIN_LENGTH_INPUT_SEARCH, ZERO } from '../CONST';
 import Loading from './Loading';
+import './search.css';
 
 export default class Search extends Component {
   constructor() {
@@ -74,18 +75,20 @@ export default class Search extends Component {
               <p>{`Resultado de álbuns de: ${singerOrBand}`}</p>
             )}
           </form>
-          {returnAlbums.map((album) => (
-            <div key={ album.collectionId }>
-              <Link
-                to={ `/album/${album.collectionId}` }
-                data-testid={ `link-to-album-${album.collectionId}` }
-              >
-                <p>{album.artistName}</p>
-                <p>{album.collectionName}</p>
-                <img src={ album.artworkUrl100 } alt={ album.collectionName } />
-              </Link>
-            </div>
-          ))}
+          <div className="album-container">
+            {returnAlbums.map((album) => (
+              <div key={ album.collectionId } className="album-card">
+                <Link
+                  to={ `/album/${album.collectionId}` }
+                  data-testid={ `link-to-album-${album.collectionId}` }
+                >
+                  <p>{album.artistName}</p>
+                  <p>{album.collectionName}</p>
+                  <img src={ album.artworkUrl100 } alt={ album.collectionName } />
+                </Link>
+              </div>
+            ))}
+          </div>
           {searchFound && returnAlbums.length === ZERO ? (
             <p>Nenhum álbum foi encontrado</p>
           ) : (
