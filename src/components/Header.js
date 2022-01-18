@@ -44,14 +44,14 @@ export default class Index extends Component {
                 <p data-testid="header-user-name">{user}</p>
               </div>
             </header>
-            <nav>
-              <Link to="/search" data-testid="link-to-search">
+            <nav className="nav">
+              <Link to="/search" data-testid="link-to-search" className="nav-link">
                 Search
               </Link>
-              <Link to="/favorites" data-testid="link-to-favorites">
+              <Link to="/favorites" data-testid="link-to-favorites" className="nav-link">
                 Favorites
               </Link>
-              <Link to="/profile" data-testid="link-to-profile">
+              <Link to="/profile" data-testid="link-to-profile" className="nav-link">
                 Profile
               </Link>
             </nav>
