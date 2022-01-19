@@ -32,6 +32,7 @@ export default class Login extends Component {
     if (isLoading) {
       return <Loading />;
     }
+
     return (
       <main data-testid="page-login">
         <form>
