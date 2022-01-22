@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import { MIN_LENGTH_INPUT_FORM } from '../CONST';
 import { createUser } from '../services/userAPI';
-import Loading from './Loading';
+import Loading from '../components/Loading';
 
 export default class Login extends Component {
   constructor() {

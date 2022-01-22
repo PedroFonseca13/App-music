@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import searchAlbumsAPI from '../services/searchAlbumsAPI';
 import { MIN_LENGTH_INPUT_SEARCH, ZERO } from '../CONST';
-import Loading from './Loading';
+import Loading from '../components/Loading';
 import './search.css';
 
 export default class Search extends Component {

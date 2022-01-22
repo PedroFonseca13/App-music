@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Header from '../components/Header';
 import getMusics from '../services/musicsAPI';
-import Loading from './Loading';
+import Loading from '../components/Loading';
 import MusicCard from '../components/MusicCard';
 
 export default class Album extends Component {
