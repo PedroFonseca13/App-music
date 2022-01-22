@@ -19,8 +19,8 @@ export default class MusicCard extends Component {
   fetchFavoriteMusic = async () => {
     const { returnedAlbums } = this.props;
     this.setState({ isLoading: true });
-    const test = await addSong(returnedAlbums);
-    console.log(test);
+    await addSong(returnedAlbums);
+
     this.setState({ isLoading: false });
   }
 
@@ -31,7 +31,7 @@ export default class MusicCard extends Component {
   render() {
     const { previewUrl, trackId, trackName } = this.props;
     const { isLoading, favSongs } = this.state;
-    console.log(favSongs);
+
     if (isLoading) return <Loading />;
     return (
       <div key={ trackId }>
