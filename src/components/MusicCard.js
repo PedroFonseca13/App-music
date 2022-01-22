@@ -68,5 +68,5 @@ MusicCard.propTypes = {
   trackId: PropTypes.string,
 }.isRequired;
 
-
-//Codigo concluido com a ajuda de Samuel de Alencar, do meu time do projeto [FRONTEND-STORE]
+// Codigo concluido com a ajuda de Samuel de Alencar
+// do meu time do projeto [FRONTEND-STORE].
