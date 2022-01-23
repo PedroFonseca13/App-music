@@ -70,24 +70,26 @@ export default class Search extends Component {
             >
               Pesquisar
             </button>
-            {isLoading && <Loading />}
-            {returnAlbums.length > ZERO && (
-              <p>{`Resultado de álbuns de: ${singerOrBand}`}</p>
-            )}
           </form>
+          {isLoading && <Loading />}
+          {returnAlbums.length > ZERO && (
+            <p>{`Resultado de álbuns de: ${singerOrBand}`}</p>
+          )}
           <ul className="album-container">
-            {returnAlbums.map((album) => (
-              <li key={ album.collectionId } className="album-card">
-                <Link
-                  to={ `/album/${album.collectionId}` }
-                  data-testid={ `link-to-album-${album.collectionId}` }
-                >
-                  <p>{album.artistName}</p>
-                  <p>{album.collectionName}</p>
-                  <img src={ album.artworkUrl100 } alt={ album.collectionName } />
-                </Link>
-              </li>
-            ))}
+            {returnAlbums.map(
+              ({ artistName, artworkUrl100, collectionId, collectionName }) => (
+                <li key={ collectionId } className="album-card">
+                  <Link
+                    to={ `/album/${collectionId}` }
+                    data-testid={ `link-to-album-${collectionId}` }
+                  >
+                    <p>{ artistName }</p>
+                    <p>{ collectionName }</p>
+                    <img src={ artworkUrl100 } alt={ collectionName } />
+                  </Link>
+                </li>
+              ),
+            )}
           </ul>
           {searchFound && returnAlbums.length === ZERO ? (
             <p>Nenhum álbum foi encontrado</p>
