@@ -49,18 +49,14 @@ export default class Album extends Component {
         <h4 data-testid="album-name">{albumName}</h4>
         <img src={ albumImage } alt={ albumName } />
 
-        <ul>
-          {returnedAlbums.map(({ previewUrl, trackId, trackName }) => (
-            <li key={ trackId }>
-              <MusicCard
-                previewUrl={ previewUrl }
-                returnedAlbums={ returnedAlbums }
-                trackId={ trackId }
-                trackName={ trackName }
-              />
-            </li>
+        <section>
+          {returnedAlbums.map((music) => (
+            <MusicCard
+              key={ music.trackId }
+              music={ music }
+            />
           ))}
-        </ul>
+        </section>
       </div>
     );
   }
@@ -72,4 +68,6 @@ Album.propTypes = {
   }),
 }.isRequired;
 
-// Pra compreender a função fetchAlbum, eu precisei ver as mentorias do rod, e fiz consulta a algumas pessoas do meu grupo do projeto para tirar as duvidas.
+// Pra compreender a função fetchAlbum, eu precisei ver as mentorias do rod.
+// Fiz consulta a algumas pessoas do meu grupo do projeto para tirar as duvidas.
+// Consultei o PR do aluno Carlos Rosa, [escolha aleatoria], para buscar uma logica diferente da que eu estava usando.
