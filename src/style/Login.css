@@ -1,20 +1,17 @@
-.page-login-container {
-  align-items: center;
-  background: #252525;
-  display: flex;
+main {
+  background-image: url('../assets/imgs/blocks-T3mKJXfdims-unsplash.jpg');
+  background-position: center;
+  background-size: cover;
   height: 100vh;
-  justify-content: center;
 }
 
-.form-login {
-  align-items: center;
-  background: linear-gradient(to right, rgb(29, 151, 108), rgba(147, 249, 184, 0.596));
-  border: 3px solid black;
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  padding: 50px;
-  text-align: center;
+.box-form {
+  height: 100%;
+}
+
+.form {
+  background-color: #3a3a3adc;
+  box-shadow: 5px 5px 5px #131313d3;
 }
 
 .inputName-container {
@@ -22,53 +19,16 @@
   border-radius: 5px;
   font-size: 1.3rem;
   margin-bottom: 10px;
+  outline-color: coral;
   padding: 5px 10px;
 }
 
-.button-container {
-  background-color: black;
-  border-radius: 4em;
-  color: white;
-  cursor: pointer;
-  font-size: 16px;
-  padding: 0.8em 1.8em;
-  position: relative;
-  text-align: center;
-  text-decoration: none;
-  transition-duration: 0.4s;
-  user-select: none;
-  -webkit-transition-duration: 0.4s;
+.inputName-container:focus {
+  border-color: #25e517cc;
+  box-shadow: 0 1px 1px rgba(123, 229, 23, 0.075) inset , 0 0 8px rgba(81, 229, 23, 0.6);
+  outline: 0 none;
 }
 
-.button-container:hover {
-  background-color: #3a3a3a;
-  transition-duration: 0.1s;
-}
-
-.button-container:after {
-  border-radius: 4em;
-  box-shadow: 0 0 10px 40px white;
-  content: '';
-  display: block;
-  height: 100%;
-  left: 0;
-  opacity: 0;
-  position: absolute;
-  top: 0;
-  transition: all 0.5s;
-  width: 100%;
-}
-
-.button-container:active:after {
-  border-radius: 4em;
-  box-shadow: 0 0 0 0 white;
-  left: 0;
-  opacity: 1;
-  position: absolute;
-  top: 0;
-  transition: 0s;
-}
-
-.button-container:active {
-  top: 1px;
+.button:disabled {
+  cursor: not-allowed;
 }
