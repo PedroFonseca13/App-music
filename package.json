@@ -41,6 +41,8 @@
     ]
   },
   "devDependencies": {
+    "@commitlint/cli": "^17.0.3",
+    "@commitlint/config-conventional": "^17.0.3",
     "eslint": "^7.31.0",
     "eslint-config-trybe-frontend": "^1.2.2",
     "eslint-plugin-react": "^7.24.0",
