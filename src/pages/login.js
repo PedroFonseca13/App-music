@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import { MIN_LENGTH_INPUT_FORM } from '../CONST';
 import { createUser } from '../services/userAPI';
+
 import Loading from '../components/Loading';
+import '../style/Login.css';
 
 export default class Login extends Component {
   constructor() {
@@ -34,10 +36,10 @@ export default class Login extends Component {
     }
 
     return (
-      <main data-testid="page-login">
-        <form>
+      <main data-testid="page-login" className="page-login-container container">
+        <form className="form-login">
           <label htmlFor="inputName">
-            Nome
+            <h2>Login</h2>
             <input
               type="text"
               id="inputName"
@@ -45,12 +47,15 @@ export default class Login extends Component {
               value={ inputName }
               onChange={ this.handleChange }
               data-testid="login-name-input"
+              placeholder="Nome"
+              className="inputName-container"
             />
           </label>
           <button
             type="button"
             disabled={ inputName.length < MIN_LENGTH_INPUT_FORM }
             onClick={ this.validateLogin }
+            className="button-container"
             data-testid="login-submit-button"
           >
             Entrar

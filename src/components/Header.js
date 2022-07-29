@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { FaUser } from 'react-icons/fa';
 import Loading from './Loading';
 import { getUser } from '../services/userAPI';
 import './Header.css';
@@ -31,17 +32,25 @@ export default class Index extends Component {
 
     return (
       <>
-        {' '}
-        {isLoading ? (
+        { ' ' }
+        { isLoading ? (
           <Loading />
         ) : (
           <>
             <header data-testid="header-component" className="header">
-              <div className="logo">
-                <h1>TrybeTunes</h1>
-              </div>
-              <div className="user">
-                <p data-testid="header-user-name">{user}</p>
+              <div className="header-container container">
+                <div className="logo">
+                  <h1>TrybeTunes</h1>
+                </div>
+                <div className="user-container">
+                  <FaUser className="user-icon" />
+                  <p
+                    className="user-name"
+                    data-testid="header-user-name"
+                  >
+                    { user }
+                  </p>
+                </div>
               </div>
             </header>
             <nav className="nav">
@@ -56,7 +65,7 @@ export default class Index extends Component {
               </Link>
             </nav>
           </>
-        )}
+        ) }
       </>
     );
   }

@@ -71,12 +71,12 @@ export default class Search extends Component {
               Pesquisar
             </button>
           </form>
-          {isLoading && <Loading />}
-          {returnAlbums.length > ZERO && (
-            <p>{`Resultado de álbuns de: ${singerOrBand}`}</p>
-          )}
+          { isLoading && <Loading /> }
+          { returnAlbums.length > ZERO && (
+            <p>{ `Resultado de álbuns de: ${singerOrBand}` }</p>
+          ) }
           <ul className="album-container">
-            {returnAlbums.map(
+            { returnAlbums.map(
               ({ artistName, artworkUrl100, collectionId, collectionName }) => (
                 <li key={ collectionId } className="album-card">
                   <Link
@@ -89,13 +89,13 @@ export default class Search extends Component {
                   </Link>
                 </li>
               ),
-            )}
+            ) }
           </ul>
-          {searchFound && returnAlbums.length === ZERO ? (
+          { searchFound && returnAlbums.length === ZERO ? (
             <p>Nenhum álbum foi encontrado</p>
           ) : (
             ''
-          )}
+          ) }
         </main>
       </div>
     );
