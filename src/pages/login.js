@@ -40,16 +40,14 @@ export default class Login extends Component {
     }
 
     return (
-      <main data-testid="page-login" id="main">
+      <main data-testid="page-login" className="main-login">
         <div
-          className="container d-flex justify-content-center align-items-center box-form"
+          className="d-flex justify-content-center align-items-center box-form"
         >
-          <Form
-            className="form px-2 py-4 rounded align-items-center border border-success"
-          >
-            <h2 className="title text-light text-center">App de musicas</h2>
-            <Form.Text className="text-light mb-2">
-              Ouça previas de suas musicas favoritas dentro do app de musicas.
+          <Form className="form rounded align-items-center">
+            <h2 className="title text-light text-center">App de músicas</h2>
+            <Form.Text className="text-light my-3 text-align-center">
+              Ouça previas de suas músicas favoritas dentro do app de músicas.
             </Form.Text>
             <Form.Group className="" controlId="formBasicEmail">
               <Form.Control

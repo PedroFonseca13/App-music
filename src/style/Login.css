@@ -1,7 +1,5 @@
-main {
-  background-image: url('../assets/imgs/blocks-T3mKJXfdims-unsplash.jpg');
-  background-position: center;
-  background-size: cover;
+.main-login {
+  background-color: #2f2f2f;
   height: 100vh;
 }
 
@@ -11,7 +9,10 @@ main {
 
 .form {
   background-color: #3a3a3adc;
+  border-top: 5px solid #03a803;
   box-shadow: 5px 5px 5px #131313d3;
+  padding: 40px 20px;
+  width: 300px;
 }
 
 .inputName-container {
