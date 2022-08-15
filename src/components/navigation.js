@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 import './navigation.css';
 
 const navigation = () => (
-  <nav className="navigation">
-    <div className="nav-container">
+  <div className="navigation position-fixed">
+    <nav className="nav-container">
       <Link to="/search" data-testid="link-to-search" className="nav-link">
         Search
       </Link>
@@ -14,8 +14,8 @@ const navigation = () => (
       <Link to="/profile" data-testid="link-to-profile" className="nav-link">
         Profile
       </Link>
-    </div>
-  </nav>
+    </nav>
+  </div>
 );
 
 export default navigation;

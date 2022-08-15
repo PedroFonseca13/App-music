@@ -3,6 +3,8 @@
   grid-area: aside;
   height: calc(100% - 104px);
   position: absolute;
+  top: 104px;
+  width: 150px;
 }
 
 .nav-link {
@@ -10,6 +12,7 @@
   margin: 20px 0;
   text-decoration: none;
   transition: background 0.3s;
+
 }
 
 .nav-link:hover {
