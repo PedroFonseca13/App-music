@@ -9,23 +9,3 @@
   display: flex;
   justify-content: space-between;
 }
-
-.nav {
-  align-content: center;
-  align-items: center;
-  background-color: black;
-  display: flex;
-  justify-content: space-between;
-  padding: 0 10px;
-}
-
-.nav-link {
-  color: white;
-  padding: 10px;
-  text-decoration: none;
-}
-
-.nav-link:hover {
-  cursor: pointer;
-  text-decoration: underline;
-}
