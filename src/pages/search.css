@@ -17,3 +17,14 @@
   width: 290px;
 }
 
+.search {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template: auto;
+  grid-template-areas: 'aside main main';
+  grid-template-columns: 200px 1fr;
+}
+
+.form-search {
+  grid-area: main;
+}

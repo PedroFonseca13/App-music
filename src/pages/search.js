@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../components/Header';
+import Navigation from '../components/navigation';
 import searchAlbumsAPI from '../services/searchAlbumsAPI';
 import { MIN_LENGTH_INPUT_SEARCH, ZERO } from '../CONST';
 import Loading from '../components/Loading';
@@ -47,10 +48,11 @@ export default class Search extends Component {
     } = this.state;
 
     return (
-      <div data-testid="page-search">
+      <>
         <Header />
-        <main>
-          <form>
+        <main className="search">
+          <Navigation />
+          <form className="form-search">
             <label htmlFor="searchInput">
               <input
                 type="text"
@@ -97,7 +99,7 @@ export default class Search extends Component {
             ''
           ) }
         </main>
-      </div>
+      </>
     );
   }
 }

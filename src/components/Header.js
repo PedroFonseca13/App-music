@@ -31,7 +31,7 @@ export default class Index extends Component {
         { isLoading ? (
           <Loading />
         ) : (
-          <header data-testid="header-component py-4" className="header">
+          <header data-testid="header-component py-4" className="header position-fixed">
             <div className="header-container container">
               <div className="logo">
                 <h1>TrezeTunes</h1>
