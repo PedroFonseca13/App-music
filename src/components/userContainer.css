@@ -1,0 +1,19 @@
+.user-container {
+  align-items: center;
+  background: lightseagreen;
+  border-radius: 50px;
+  color: whitesmoke;
+  display: flex;
+  gap: 10px;
+  grid-gap: 10px;
+  padding: 5px 10px;
+}
+
+.img-container {
+  background-color: forestgreen;
+  border-radius: 50px;
+}
+
+.user-name {
+  margin-bottom: 0;
+}
