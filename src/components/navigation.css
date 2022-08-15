@@ -1,0 +1,20 @@
+.navigation {
+  background-color: black;
+  grid-area: aside;
+  height: calc(100% - 104px);
+  position: absolute;
+}
+
+.nav-link {
+  color: whitesmoke;
+  margin: 20px 0;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.nav-link:hover {
+  background-color: #a7a5a5;
+  color: #272727;
+  cursor: pointer;
+  text-decoration: none;
+}
