@@ -1,27 +1,13 @@
 .header {
-  background: aquamarine;
+  background: #1b1b1b;
+  color: #f1f1f1;
+  padding: 1.5rem 0;
 }
 
 .header-container {
   align-items: center;
   display: flex;
   justify-content: space-between;
-}
-
-.user-container {
-  align-items: center;
-  background: black;
-  border-radius: 50px;
-  color: white;
-  display: flex;
-  gap: 10px;
-  padding: 0 10px;
-}
-
-.user-icon {
-  background: aquamarine;
-  border-radius: 50%;
-  padding: 5px;
 }
 
 .nav {
@@ -43,6 +29,3 @@
   cursor: pointer;
   text-decoration: underline;
 }
-
-
-

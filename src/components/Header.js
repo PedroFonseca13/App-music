@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { FaUser } from 'react-icons/fa';
+import UserContainer from './UserContainer';
 import Loading from './Loading';
-import { getUser } from '../services/userAPI';
 import './Header.css';
 
 export default class Index extends Component {
@@ -10,7 +9,6 @@ export default class Index extends Component {
     super();
 
     this.state = {
-      user: '',
       isLoading: true,
     };
   }
@@ -20,15 +18,13 @@ export default class Index extends Component {
   }
 
   fetchUser = async () => {
-    const userName = await getUser();
     this.setState({
-      user: userName.name,
       isLoading: false,
     });
   };
 
   render() {
-    const { user, isLoading } = this.state;
+    const { isLoading } = this.state;
 
     return (
       <>
@@ -37,20 +33,12 @@ export default class Index extends Component {
           <Loading />
         ) : (
           <>
-            <header data-testid="header-component" className="header">
+            <header data-testid="header-component py-4" className="header">
               <div className="header-container container">
                 <div className="logo">
-                  <h1>TrybeTunes</h1>
+                  <h1>TrezeTunes</h1>
                 </div>
-                <div className="user-container">
-                  <FaUser className="user-icon" />
-                  <p
-                    className="user-name"
-                    data-testid="header-user-name"
-                  >
-                    { user }
-                  </p>
-                </div>
+                <UserContainer />
               </div>
             </header>
             <nav className="nav">
