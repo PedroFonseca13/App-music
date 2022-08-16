@@ -16,7 +16,6 @@ export default class Search extends Component {
       isLoading: false,
       returnAlbums: [],
       singerOrBand: '',
-      searchFound: false,
     };
   }
 
@@ -34,7 +33,6 @@ export default class Search extends Component {
       searchInput: '',
       returnAlbums: [...albums],
       singerOrBand: prevState.searchInput,
-      searchFound: true,
     }));
   };
 
@@ -44,7 +42,6 @@ export default class Search extends Component {
       isLoading,
       returnAlbums,
       singerOrBand,
-      searchFound,
     } = this.state;
 
     return (
@@ -52,52 +49,50 @@ export default class Search extends Component {
         <Header />
         <main className="search">
           <Navigation />
-          <form className="form-search">
-            <label htmlFor="searchInput">
-              <input
-                type="text"
-                name="searchInput"
-                id="searchInput"
-                value={ searchInput }
-                onChange={ this.handleChange }
-                data-testid="search-artist-input"
-                placeholder="Nome do Artista"
-              />
-            </label>
-            <button
-              type="button"
-              data-testid="search-artist-button"
-              onClick={ this.searchAlbum }
-              disabled={ searchInput.length < MIN_LENGTH_INPUT_SEARCH }
-            >
-              Pesquisar
-            </button>
-          </form>
-          { isLoading && <Loading /> }
-          { returnAlbums.length > ZERO && (
-            <p>{ `Resultado de álbuns de: ${singerOrBand}` }</p>
-          ) }
-          <ul className="album-container">
-            { returnAlbums.map(
-              ({ artistName, artworkUrl100, collectionId, collectionName }) => (
-                <li key={ collectionId } className="album-card">
-                  <Link
-                    to={ `/album/${collectionId}` }
-                    data-testid={ `link-to-album-${collectionId}` }
-                  >
-                    <p>{ artistName }</p>
-                    <p>{ collectionName }</p>
-                    <img src={ artworkUrl100 } alt={ collectionName } />
-                  </Link>
-                </li>
-              ),
-            ) }
-          </ul>
-          { searchFound && returnAlbums.length === ZERO ? (
-            <p>Nenhum álbum foi encontrado</p>
-          ) : (
-            ''
-          ) }
+          <div className="search-container">
+            <form className="form-search">
+              <label htmlFor="searchInput">
+                <input
+                  type="text"
+                  name="searchInput"
+                  id="searchInput"
+                  value={ searchInput }
+                  onChange={ this.handleChange }
+                  placeholder="Nome do Artista"
+                />
+              </label>
+              <button
+                type="button"
+                data-testid="search-artist-button"
+                onClick={ this.searchAlbum }
+                disabled={ searchInput.length < MIN_LENGTH_INPUT_SEARCH }
+              >
+                Pesquisar
+              </button>
+            </form>
+            { isLoading && <Loading /> }
+            { returnAlbums.length > ZERO ? (
+              <div className="results-container container">
+                <p>{ `Resultado de álbuns de: ${singerOrBand}` }</p>
+                <ul className="album-container">
+                  { returnAlbums.map(
+                    ({ artistName, artworkUrl100, collectionId, collectionName }) => (
+                      <li key={ collectionId } className="album-card">
+                        <Link
+                          to={ `/album/${collectionId}` }
+                          data-testid={ `link-to-album-${collectionId}` }
+                        >
+                          <p>{ artistName }</p>
+                          <p>{ collectionName }</p>
+                          <img src={ artworkUrl100 } alt={ collectionName } />
+                        </Link>
+                      </li>
+                    ),
+                  ) }
+                </ul>
+              </div>
+            ) : (<p>Nenhum álbum foi encontrado</p>) }
+          </div>
         </main>
       </>
     );

@@ -1,8 +1,6 @@
 .album-container {
-  align-items: center;
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .album-card {
@@ -19,12 +17,29 @@
 
 .search {
   display: grid;
-  grid-gap: 1rem;
   grid-template: auto;
   grid-template-areas: 'aside main main';
-  grid-template-columns: 200px 1fr;
+  grid-template-columns: 150px 1fr;
+}
+
+.search-container {
+  grid-area: main;
+  position: relative;
+  top: 104px;
 }
 
 .form-search {
-  grid-area: main;
+  background: mediumseagreen;
+  display: flex;
+  justify-content: center;
+  padding: 2rem 0;
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+}
+
+.results-container {
+  position: relative;
+  text-align: center;
+  top: 120px;
 }
