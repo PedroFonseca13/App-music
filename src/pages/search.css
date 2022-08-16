@@ -43,3 +43,14 @@
   text-align: center;
   top: 120px;
 }
+
+.not-found {
+  font-size: 2rem;
+  position: relative;
+  text-align: center;
+  top: 104px;
+}
+
+.not-found span {
+  display: block;
+}

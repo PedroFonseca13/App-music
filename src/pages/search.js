@@ -16,6 +16,7 @@ export default class Search extends Component {
       isLoading: false,
       returnAlbums: [],
       singerOrBand: '',
+      searchFound: false,
     };
   }
 
@@ -33,6 +34,7 @@ export default class Search extends Component {
       searchInput: '',
       returnAlbums: [...albums],
       singerOrBand: prevState.searchInput,
+      searchFound: true,
     }));
   };
 
@@ -42,6 +44,7 @@ export default class Search extends Component {
       isLoading,
       returnAlbums,
       singerOrBand,
+      searchFound,
     } = this.state;
 
     return (
@@ -71,7 +74,7 @@ export default class Search extends Component {
               </button>
             </form>
             { isLoading && <Loading /> }
-            { returnAlbums.length > ZERO ? (
+            { returnAlbums.length > ZERO && (
               <div className="results-container container">
                 <p>{ `Resultado de álbuns de: ${singerOrBand}` }</p>
                 <ul className="album-container">
@@ -91,10 +94,21 @@ export default class Search extends Component {
                   ) }
                 </ul>
               </div>
-            ) : (<p>Nenhum álbum foi encontrado</p>) }
+            ) }
+            { searchFound && returnAlbums.length === ZERO ? (
+              <p className="not-found">
+                Nenhum álbum foi encontrado.
+                <span>😢</span>
+              </p>
+            ) : (
+              ''
+            ) }
           </div>
         </main>
       </>
     );
   }
 }
+
+// Nenhum álbum foi encontrado.
+// < span >😢</ >
